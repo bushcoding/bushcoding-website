@@ -38,7 +38,7 @@ p {
 }
 
 .rainbow-text {
-  background: linear-gradient(to right, #61ff61, #13ff13, #00ff66, #66ff85, #61ff61);
+  background: linear-gradient(to right, #61ff61, #85ff13, #00ff66, #66ffa3, #61ff61);
   background-size: 200% 100%;
   animation: rainbow 6s linear infinite;
   -webkit-background-clip: text;
@@ -57,7 +57,7 @@ p {
   left: 0;
   width: 200%;
   height: 5px;
-  background: linear-gradient(to right, #61ff61, #13ff13, #00ff66, #66ff85, #61ff61);
+  background: linear-gradient(to right, #61ff61, #85ff13, #00ff66, #66ffa3, #61ff61);
   background-size: 50% 100%;
   animation: animate-border 3s linear infinite;
 }
