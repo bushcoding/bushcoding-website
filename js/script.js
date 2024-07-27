@@ -41,17 +41,3 @@ document.getElementById('copy-button').addEventListener('click', () => {
     });
 });
 
-window.onload = function () {
-    const form = document.querySelector('form');
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); // Prevenimos el envío del formulario por defecto
-        netlifyRecaptcha.execute().then((token) => {
-            if (token) {
-                // El captcha se ha completado correctamente, podemos enviar el formulario
-                form.submit();
-            } else {
-                alert('Por favor, complete el captcha antes de enviar el formulario');
-            }
-        });
-    });
-}
