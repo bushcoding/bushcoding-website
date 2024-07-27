@@ -44,7 +44,7 @@ document.getElementById('copy-button').addEventListener('click', () => {
 const form = document.querySelector('form');
 form.addEventListener('submit', (e) => {
     const recaptcha = document.querySelector('[data-netlify-recaptcha]');
-    if (!recaptcha.getAttribute('data-netlify-recaptcha-verified')) {
+    if (!netlifyRecaptcha.verify()) {
         e.preventDefault();
         alert('Por favor, complete el captcha antes de enviar el formulario');
     }
