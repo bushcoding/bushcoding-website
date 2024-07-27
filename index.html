@@ -171,24 +171,24 @@
          <h2>Contact Us</h2>
          <p>If you wish, you can contact us by filling out the following form below.</p>
 
-         <form name="contact" method="POST" data-netlify="true">
+         <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
             <p>
                <label>Name:</label>
                <br>
-               <input type="text" name="name" />
+               <input type="text" name="name" placeholder="Your Name" required/>
             </p>
             <br>
             <p>
                <label>Email:</label>
                <br>
-               <input type="email" name="email" />
+               <input type="email" name="email" placeholder="Your Email" required/>
             </p>
             <p>
                <label>Message:</label>
                <br>
-               <textarea name="message"></textarea>
+               <textarea name="message" placeholder="Your Message" required></textarea>
             </p>
-            <div data-netlify-recaptcha="true"></div>
+            <div class="g-recaptcha"></div>
             <p>
                <button type="submit">Send</button>
             </p>
