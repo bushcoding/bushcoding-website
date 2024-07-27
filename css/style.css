@@ -504,6 +504,11 @@ form[name="contact"] button[type="submit"]:hover {
   transform: scale(1.05);
 }
 
+.captcha-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
 .email-container {
   display: flex;
   align-items: center;

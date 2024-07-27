@@ -188,29 +188,18 @@
                <br>
                <textarea name="message" placeholder="Your Message" required></textarea>
             </p>
-            <div data-netlify-recaptcha="true"></div>
+            <div class="captcha-container">
+               <div data-netlify-recaptcha="true"></div>
+            </div>
+            <div id="error-message"></div>
             <p>
                <button type="submit">Send</button>
             </p>
-            <div id="error-message"></div>
          </form>
-
-         <script>
-            const form = document.querySelector('form');
-            const errorMessage = document.querySelector('#error-message');
-
-            form.addEventListener('submit', (e) => {
-               const recaptchaResponse = document.querySelector('.g-recaptcha-response').value;
-               if (recaptchaResponse === '') {
-                  e.preventDefault();
-                  errorMessage.textContent = 'Por favor, resuelve el captcha antes de enviar el formulario';
-               }
-            });
-         </script>
          <div class="email-container">
             <p id="email">support@bushcoding.freshdesk.com</p>
             <button id="copy-button">
-               <i class="fas fa-copy"></i>
+               <i class="fas fa-copy" id="copy-icon"></i>
             </button>
          </div>
       </div>

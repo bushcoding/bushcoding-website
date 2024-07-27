@@ -1,4 +1,3 @@
-// Agrega evento de scroll al documento
 document.addEventListener("scroll", function () {
     var scrollPosition = window.scrollY;
     var sections = document.querySelectorAll(".content > div");
@@ -16,7 +15,6 @@ document.addEventListener("scroll", function () {
     });
 });
 
-// Agrega evento de click a cada enlace del navbar
 document.querySelectorAll("nav ul li a").forEach(function (link) {
     link.addEventListener("click", function (event) {
         event.preventDefault();
@@ -34,10 +32,26 @@ document.querySelectorAll("nav ul li a").forEach(function (link) {
 
 document.getElementById('copy-button').addEventListener('click', () => {
     const email = document.getElementById('email').textContent;
+    const copyIcon = document.getElementById('copy-icon');
     navigator.clipboard.writeText(email).then(() => {
-        alert('Correo copiado al portapapeles!');
+        copyIcon.classList.remove('fa-copy');
+        copyIcon.classList.add('fa-check');
+        setTimeout(() => {
+            copyIcon.classList.remove('fa-check');
+            copyIcon.classList.add('fa-copy');
+        }, 1500);
     }, (err) => {
-        console.error('Error al copiar el correo: ', err);
+        console.error('Error copying email: ', err);
     });
 });
 
+const form = document.querySelector('form');
+const errorMessage = document.querySelector('#error-message');
+
+form.addEventListener('submit', (e) => {
+    const recaptchaResponse = document.querySelector('.g-recaptcha-response').value;
+    if (recaptchaResponse === '') {
+        e.preventDefault();
+        errorMessage.textContent = 'Please solve the captcha before submitting the form';
+    }
+});
