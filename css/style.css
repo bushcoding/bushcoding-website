@@ -505,8 +505,26 @@ form[name="contact"] button[type="submit"]:hover {
 }
 
 .captcha-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#error-message {
+  color: #f44336;
+  /* Rojo */
+  font-size: 16px;
+  font-weight: bold;
   text-align: center;
   margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #f44336;
+  border-radius: 5px;
+  background-color: #ffe6e6;
+}
+
+#error-message:empty {
+  display: none;
 }
 
 .email-container {
