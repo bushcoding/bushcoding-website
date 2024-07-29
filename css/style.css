@@ -79,7 +79,7 @@ nav {
   display: flex;
   height: 70px;
   width: 100%;
-  background: transparent;
+  background: rgba(28, 28, 28, 0.1);
   backdrop-filter: blur(5px);
   align-items: center;
   justify-content: space-between;
