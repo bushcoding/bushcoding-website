@@ -6,8 +6,6 @@
 /* General */
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
   scroll-behavior: smooth;
@@ -20,6 +18,7 @@
 
 body {
   background-color: #1c1c1c;
+  
   color: #fff;
   margin: 0;
   padding: 0;
@@ -204,7 +203,7 @@ input[type="checkbox"] {
 .content>div {
   /* border: 1px solid #fff; */
   overflow: hidden;
-  padding: 10px;
+  padding: 80px 0;
 }
 
 @keyframes rainbow {
@@ -216,19 +215,43 @@ input[type="checkbox"] {
     background-position: 100% 0;
   }
 }
-
 /* Home */
-
 .home {
-  min-height: 100vh;
+  height: 100vh; /* Cambia de min-height a height */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative; /* Necesario para el pseudo-elemento */
+  overflow: hidden; /* Evitar desbordes que muestren el fondo */
 }
 
+.home::before {
+  content: ''; /* Necesario para crear un pseudo-elemento */
+  position: absolute; /* Posición absoluta respecto a .home */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-image: url('../img/background.webp'); /* Imagen de fondo */
+  background-size: cover; /* Asegura que la imagen cubra todo el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita que la imagen se repita */
+
+  filter: blur(8px); /* Ajusta el valor de desenfoque según sea necesario */
+  z-index: 0; /* Asegura que el fondo esté detrás del contenido */
+}
+
+.home > * {
+  position: relative; /* Asegura que el contenido esté por encima del fondo */
+  z-index: 1; /* Asegura que el contenido esté por encima del pseudo-elemento */
+}
+
+
+
 .home h1 {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   font-weight: 700;
   margin-bottom: 1rem;
   text-align: center;
@@ -236,7 +259,7 @@ input[type="checkbox"] {
 
 .home p {
   width: 50%;
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: center;
 }
 
@@ -244,7 +267,7 @@ input[type="checkbox"] {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 20px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 700;
   color: #fff;
   background-color: var(--bcc);
@@ -284,10 +307,9 @@ input[type="checkbox"] {
 
 /* About */
 
-.about {
-  margin-bottom: 70px;
+.about-content {
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -305,9 +327,6 @@ input[type="checkbox"] {
   padding: 10px;
 }
 
-.about-image:hover {
-  transform: scale(1.05);
-}
 
 .about-image img {
   border-radius: 10px;
@@ -337,8 +356,7 @@ input[type="checkbox"] {
 /* Services */
 
 .services {
-  margin-bottom: 70px;
-  min-height: 70vh;
+  background-color: #2a2a2a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -350,7 +368,7 @@ input[type="checkbox"] {
 .services-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .services-cards .card {
@@ -368,10 +386,6 @@ input[type="checkbox"] {
   justify-content: space-between;
 }
 
-.services-cards .card:hover {
-  transform: scale(1.05);
-}
-
 .icons i {
   margin: 0 10px;
   font-size: 24px;
@@ -380,8 +394,6 @@ input[type="checkbox"] {
 /* Products */
 
 .products {
-  margin-bottom: 70px;
-  min-height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -393,7 +405,7 @@ input[type="checkbox"] {
 .products-cards {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: flex-start;
 }
 
@@ -409,10 +421,6 @@ input[type="checkbox"] {
   color: #fff;
   display: flex;
   flex-direction: column;
-}
-
-.products-cards .card:hover {
-  transform: scale(1.05);
 }
 
 .card-image {
@@ -463,8 +471,7 @@ input[type="checkbox"] {
 /* Contact */
 
 .contact {
-  margin-bottom: 70px;
-  padding: 50px 20px;
+  background-color: #2a2a2a;
   text-align: center;
 }
 
@@ -475,7 +482,6 @@ form[name="contact"] {
 
 form[name="contact"] label {
   display: block;
-  margin-bottom: 10px;
 }
 
 form[name="contact"] input[type="text"],
