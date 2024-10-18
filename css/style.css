@@ -208,7 +208,6 @@ input[type="checkbox"] {
 .content>div {
   /* border: 1px solid #fff; */
   overflow: hidden;
-  padding: 80px 0;
 }
 
 @keyframes rainbow {
@@ -292,6 +291,7 @@ input[type="checkbox"] {
 /* About */
 
 .about-content {
+  padding: 80px 0;
   background-color: #1c1c1b;
   display: flex;
   justify-content: space-evenly;
@@ -341,6 +341,7 @@ input[type="checkbox"] {
 /* Services */
 
 .services {
+  padding: 80px 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -378,6 +379,7 @@ input[type="checkbox"] {
 /* Products */
 
 .products {
+  padding: 80px 0;
   background-color: #1c1c1b;
   display: flex;
   flex-direction: column;
@@ -456,6 +458,7 @@ input[type="checkbox"] {
 /* Contact */
 
 .contact {
+  padding: 80px 0;
   text-align: center;
 }
 
