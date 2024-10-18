@@ -17,8 +17,13 @@
 }
 
 body {
-  background-color: #1c1c1c;
-  
+  background-image: 
+  radial-gradient(circle at 20% 30%, #051a05, transparent 10%),
+  radial-gradient(circle at 60% 70%, #041302, transparent 12%),
+  radial-gradient(circle at 40% 50%, #051a05, transparent 8%),
+  radial-gradient(circle at 80% 40%, #041302, transparent 10%),
+  radial-gradient(circle at 30% 80%, #051a05, transparent 9%),
+  linear-gradient(to right, #051a05, #041302, #051a05);
   color: #fff;
   margin: 0;
   padding: 0;
@@ -217,36 +222,15 @@ input[type="checkbox"] {
 }
 /* Home */
 .home {
-  height: 100vh; /* Cambia de min-height a height */
+  height: 100vh; /* Mantén height si es necesario para el diseño */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: relative; /* Necesario para el pseudo-elemento */
-  overflow: hidden; /* Evitar desbordes que muestren el fondo */
+  overflow: hidden; /* Mantén esto si tienes problemas de desbordes */
 }
 
-.home::before {
-  content: ''; /* Necesario para crear un pseudo-elemento */
-  position: absolute; /* Posición absoluta respecto a .home */
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-
-  background-image: url('../img/background.webp'); /* Imagen de fondo */
-  background-size: cover; /* Asegura que la imagen cubra todo el área */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita que la imagen se repita */
-
-  filter: blur(8px); /* Ajusta el valor de desenfoque según sea necesario */
-  z-index: 0; /* Asegura que el fondo esté detrás del contenido */
-}
-
-.home > * {
-  position: relative; /* Asegura que el contenido esté por encima del fondo */
-  z-index: 1; /* Asegura que el contenido esté por encima del pseudo-elemento */
-}
+/* Elimina todo lo relacionado con el pseudo-elemento */
 
 
 
@@ -308,6 +292,7 @@ input[type="checkbox"] {
 /* About */
 
 .about-content {
+  background-color: #1c1c1b;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -356,7 +341,6 @@ input[type="checkbox"] {
 /* Services */
 
 .services {
-  background-color: #2a2a2a;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -374,7 +358,7 @@ input[type="checkbox"] {
 .services-cards .card {
   margin: 10px;
   margin-bottom: 20px;
-  background-color: #272727;
+  background-color: #1c1c1b;
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
@@ -394,6 +378,7 @@ input[type="checkbox"] {
 /* Products */
 
 .products {
+  background-color: #1c1c1b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -412,7 +397,7 @@ input[type="checkbox"] {
 .products-cards .card {
   margin: 10px;
   margin-bottom: 20px;
-  background-color: #272727;
+  background-color: #232323;
   padding: 20px;
   border-radius: 10px;
   max-width: 400px;
@@ -471,7 +456,6 @@ input[type="checkbox"] {
 /* Contact */
 
 .contact {
-  background-color: #2a2a2a;
   text-align: center;
 }
 
@@ -491,7 +475,7 @@ form[name="contact"] textarea {
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #272727;
+  background-color: #1c1c1b;
   color: #fff;
   box-sizing: border-box;
 }
@@ -617,7 +601,7 @@ form[name="contact"] button[type="submit"]:hover {
 /* Footer */
 
 .footer-bottom {
-  background-color: var(--bbc2);
+  background-color: #1c1c1b;
   color: #fff;
   padding: 20px;
   text-align: center;
