@@ -427,8 +427,8 @@ input[type="checkbox"] {
   gap: 10px;
 }
 
-.button-blue,
-.button-red {
+.button-green,
+.button-white {
   flex: 1;
   padding: 10px;
   border-radius: 5px;
@@ -437,22 +437,22 @@ input[type="checkbox"] {
   text-align: center;
 }
 
-.button-blue {
-  background-color: #007bff;
+.button-green {
+  background-color: var(--bcc);
   color: #fff;
 }
 
-.button-blue:hover {
-  background-color: #0056b3;
+.button-green:hover {
+  background-color: var(--bbc2);
 }
 
-.button-red {
-  background-color: #ff4d4d;
-  color: #fff;
+.button-white {
+  background-color: #ffffff;
+  color: #1c1c1b;
 }
 
-.button-red:hover {
-  background-color: #cc0000;
+.button-white:hover {
+  background-color: #cbcbcb;
 }
 
 /* Contact */
