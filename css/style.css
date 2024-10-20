@@ -429,7 +429,6 @@ input[type="checkbox"] {
   width: 100%;
   max-width: 400px;
   height: 200px;
-  margin-bottom: 20px;
   object-fit: cover;
 }
 
